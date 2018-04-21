@@ -12,8 +12,8 @@
                     <button fxShow="false" fxShow.gt-xs *ngIf="settings.menu == 'vertical'" mat-icon-button (click)="settings.sidenavUserBlock = !settings.sidenavUserBlock">
                         <mat-icon>person</mat-icon>
                     </button> 
-                    <a *ngIf="settings.menu == 'horizontal'" mat-raised-button color="accent" routerLink="/" (click)="closeSubMenus()" class="small-logo">G</a>
-                    <a *ngIf="settings.menu == 'horizontal'" class="logo" routerLink="/" (click)="closeSubMenus()">GRADUS</a>  
+                    <a *ngIf="settings.menu == 'horizontal'" mat-raised-button color="accent" routerLink="/" (click)="closeSubMenus()" class="small-logo">CJ</a>
+                    <a *ngIf="settings.menu == 'horizontal'" class="logo" routerLink="/" (click)="closeSubMenus()">CLEVER JOURNEY</a>  
                 </div>            
                 <div fxLayout="row" fxLayoutAlign="end center">
                     <div fxLayout="row" fxLayoutAlign="start center" fxShow="false" fxShow.gt-xs class="search-bar">
@@ -23,8 +23,7 @@
                                 <mat-icon>search</mat-icon>
                             </button> 
                         </form>
-                    </div>                
-                    <app-flags-menu fxShow="false" fxShow.gt-sm></app-flags-menu>
+                    </div>
                     <app-fullscreen></app-fullscreen> 
                     <app-applications fxShow="false" fxShow.gt-sm></app-applications>
                     <app-messages fxShow="false" fxShow.gt-xs></app-messages>
