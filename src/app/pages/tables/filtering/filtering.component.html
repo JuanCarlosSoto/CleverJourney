@@ -5,25 +5,102 @@
                 <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Type to filter all columns">
             </mat-form-field> 
         </div>
-        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">       
-            <ng-container matColumnDef="position">
-                <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-            </ng-container>         
-            <ng-container matColumnDef="name">
-                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="messages">
+                <mat-header-cell *matHeaderCellDef> Messages </mat-header-cell>
+                <mat-cell *matCellDef="let row"> <i class="material-icons">message</i> </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="edit">
+                <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+                <mat-cell *matCellDef="let row"> <i class="material-icons">create</i> </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="hot">
+                <mat-header-cell *matHeaderCellDef> Hot </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.hot}} </mat-cell>
             </ng-container>     
-            <ng-container matColumnDef="weight">
-                <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+            <ng-container matColumnDef="axisref">
+                <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
             </ng-container>        
-            <ng-container matColumnDef="symbol">
-                <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+            <ng-container matColumnDef="pocustomerref">
+                <mat-header-cell *matHeaderCellDef> PO / Customer Ref </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pocustomerref}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="sovendorref">
+                <mat-header-cell *matHeaderCellDef> SO / Vendor Ref </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.sovendorref}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="requesteddate">
+                <mat-header-cell *matHeaderCellDef> Requested Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.requesteddate}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="shippingdate">
+                <mat-header-cell *matHeaderCellDef> Shipping Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.shippingdate}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="eta">
+                <mat-header-cell *matHeaderCellDef> ETA </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.eta}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="delivery">
+                <mat-header-cell *matHeaderCellDef> Delivery </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.delivery}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="shipper">
+                <mat-header-cell *matHeaderCellDef> Shipper </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.shipper}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="consignee">
+                <mat-header-cell *matHeaderCellDef> Consignee </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.consignee}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="commentslog">
+                <mat-header-cell *matHeaderCellDef> Comments Log </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.commentslog}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="carrier">
+                <mat-header-cell *matHeaderCellDef> Carrier </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.carrier}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="service">
+                <mat-header-cell *matHeaderCellDef> Service </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.service}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="hu">
+                <mat-header-cell *matHeaderCellDef> H.U. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.hu}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="wt">
+                <mat-header-cell *matHeaderCellDef> WT </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.wt}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="quoteno">
+                <mat-header-cell *matHeaderCellDef> Quote # </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.quoteno}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pickupno">
+                <mat-header-cell *matHeaderCellDef> Pickup # </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pickupno}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="prono">
+                <mat-header-cell *matHeaderCellDef> PRO # </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.prono}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="duration">
+                <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.duration}} </mat-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>        
+        </mat-table>
+        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
     </div>
 </div>
