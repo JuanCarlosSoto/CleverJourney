@@ -3,6 +3,8 @@ export class Chat {
                 public author: string,
                 public authorStatus: string,
                 public text: string,
+                public hasAttachment: boolean,
+                public attachmentName: string,
                 public date: Date,
                 public my: boolean) { }
 } 

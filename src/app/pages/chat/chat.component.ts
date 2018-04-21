@@ -3,6 +3,7 @@ import { AppSettings } from '../../app.settings';
 import { Settings } from '../../app.settings.model';
 import { Chat } from './chat.model';
 import { ChatService } from './chat.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -11,30 +12,29 @@ import { ChatService } from './chat.service';
   providers: [ ChatService ]
 })
 export class ChatComponent implements OnInit {
-  @ViewChild('sidenav') sidenav: any;
   public settings: Settings;
   public userImage = 'assets/img/users/user.jpg';
   public chats: Array<Chat>;
   public talks: Array<Chat>;
-  public sidenavOpen:boolean = true;
   public currentChat:Chat;
   public newMessage:string;
 
-  constructor(public appSettings:AppSettings, private chatService:ChatService) { 
+  constructor(public appSettings:AppSettings, private chatService:ChatService, public router:Router) { 
     this.settings = this.appSettings.settings; 
   }
 
   ngOnInit() {
-    this.chats = this.chatService.getChats(); 
-    if(window.innerWidth <= 768){
+    this.chats = this.chatService.getChats();
+    this.getChat(this.chats[0]);
+    /*if(window.innerWidth <= 768){
       this.sidenavOpen = false;
-    }    
+    }*/    
   } 
 
-  @HostListener('window:resize')
+  /*@HostListener('window:resize')
   public onWindowResize():void {
     (window.innerWidth <= 768) ? this.sidenavOpen = false : this.sidenavOpen = true;
-  }
+  }*/
 
   public getChat(obj){
     if(this.talks){
@@ -48,9 +48,9 @@ export class ChatComponent implements OnInit {
         talk.image = obj.image;
       }
     });
-    if(window.innerWidth <= 768){
+    /*if(window.innerWidth <= 768){
       this.sidenav.close();
-    }     
+    }*/     
   }
 
   public sendMessage($event) {       
@@ -61,7 +61,7 @@ export class ChatComponent implements OnInit {
               'assets/img/users/user.jpg', 
               'Emilio Verdines', 
               'online', 
-              this.newMessage,
+              this.newMessage, false, null,
               new Date(), 
               true)
         )
@@ -81,6 +81,11 @@ export class ChatComponent implements OnInit {
   public ngOnDestroy(){
     if(this.talks)
       this.talks.length = 2;
+  }
+
+  showOrders() {
+    // navigate to ~/tables/filtering
+    this.router.navigate(['/tables/filtering']);
   }
 
 }
