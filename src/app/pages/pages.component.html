@@ -42,7 +42,6 @@
         </mat-toolbar>
 
         <div id="main-content" class="inner-sidenav-content transition-2" perfectScrollbar [disabled]="!settings.fixedHeader" (psScrollY)="onPsScrollY($event)" [class.horizontal-menu-hidden]="isStickyMenu"> 
-            <app-breadcrumb></app-breadcrumb>
             <router-outlet></router-outlet>    
         </div>
 

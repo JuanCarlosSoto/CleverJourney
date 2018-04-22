@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   providers: [ ChatService ]
 })
 export class ChatComponent implements OnInit {
+  @ViewChild('file') file;
   public settings: Settings;
   public userImage = 'assets/img/users/user.jpg';
   public chats: Array<Chat>;
@@ -86,6 +87,21 @@ export class ChatComponent implements OnInit {
   showOrders() {
     // navigate to ~/tables/filtering
     this.router.navigate(['/tables/filtering']);
+  }
+
+  addFile() {
+    this.file.nativeElement.click();
+  }
+
+  onFileAdded() {
+    const files: { [key: string]: File } = this.file.nativeElement.files;
+    // FIXME: Will this work with a single selected file?
+    for (let key in files) {
+      if (!isNaN(parseInt(key))) {
+        // Process the added file by reading :
+        // files[key]
+      }
+    }
   }
 
 }
