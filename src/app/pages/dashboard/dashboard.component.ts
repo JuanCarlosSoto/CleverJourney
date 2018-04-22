@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppSettings } from '../../app.settings';
 import { Settings } from '../../app.settings.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,16 +10,11 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   public settings: Settings;
-  constructor(public appSettings:AppSettings, public router:Router){
+  constructor(public appSettings:AppSettings){
     this.settings = this.appSettings.settings; 
   }
 
   ngOnInit() {
-  }
-
-  showChat() {
-    // navigate to ~/chat
-    this.router.navigate(['/chat']);
   }
 
 }
