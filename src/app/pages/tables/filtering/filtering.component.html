@@ -9,18 +9,23 @@
         <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <ng-container matColumnDef="messages">
-                <mat-header-cell *matHeaderCellDef> Messages </mat-header-cell>
-                <mat-cell *matCellDef="let row"> <i class="material-icons">message</i> </mat-cell>
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <i style="cursor: pointer" class="material-icons" (click)="displayComments()">message</i>
+                </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="edit">
-                <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
-                <mat-cell *matCellDef="let row"> <i class="material-icons">create</i> </mat-cell>
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let row"> <i style="cursor: pointer" class="material-icons">create</i> </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="hot">
                 <mat-header-cell *matHeaderCellDef> Hot </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.hot}} </mat-cell>
+                <mat-cell *matCellDef="let element"> 
+                    <i *ngIf="element.hot" class="material-icons">flag</i>
+                    <i *ngIf="!element.hot" class="material-icons">check_box_outline_blank</i>
+                </mat-cell>
             </ng-container>     
             <ng-container matColumnDef="axisref">
                 <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
