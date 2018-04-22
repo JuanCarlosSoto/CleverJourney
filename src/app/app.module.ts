@@ -29,7 +29,6 @@ import { AppSettings } from './app.settings';
 import { SidenavComponent } from './theme/components/sidenav/sidenav.component';
 import { VerticalMenuComponent } from './theme/components/menu/vertical-menu/vertical-menu.component';
 import { HorizontalMenuComponent } from './theme/components/menu/horizontal-menu/horizontal-menu.component';
-import { BreadcrumbComponent } from './theme/components/breadcrumb/breadcrumb.component';
 import { FullScreenComponent } from './theme/components/fullscreen/fullscreen.component';
 import { ApplicationsComponent } from './theme/components/applications/applications.component';
 import { MessagesComponent } from './theme/components/messages/messages.component';
@@ -60,7 +59,6 @@ import { UserMenuComponent } from './theme/components/user-menu/user-menu.compon
     SidenavComponent,
     VerticalMenuComponent,
     HorizontalMenuComponent,
-    BreadcrumbComponent,
     FullScreenComponent,
     ApplicationsComponent,
     MessagesComponent,

@@ -61,7 +61,7 @@
                             <input matInput placeholder="Enter your text..." (keyup)="sendMessage($event)" [(ngModel)]="newMessage">
                         </mat-form-field>
                         <div fxLayout="row" fxLayoutAlign="scenter center">
-                            <button mat-icon-button type="button">
+                            <button mat-icon-button type="button" (click)="addFile()">
                                 <mat-icon>attach_file</mat-icon>
                             </button>
                             <button mat-mini-fab color="primary" type="button" (click)="sendMessage($event)">
@@ -74,3 +74,4 @@
         </mat-card>
     </div>
 </div>
+<input type="file" #file style="display: none" (change)="onFileAdded()" />
