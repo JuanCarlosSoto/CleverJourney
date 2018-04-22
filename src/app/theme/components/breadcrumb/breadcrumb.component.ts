@@ -28,9 +28,9 @@ export class BreadcrumbComponent {
                 this.breadcrumbs = [];                
                 this.parseRoute(this.router.routerState.snapshot.root); 
                 this.pageTitle = "";
-                this.breadcrumbs.forEach(breadcrumb => {
+                /*this.breadcrumbs.forEach(breadcrumb => {
                     this.pageTitle += ' > ' + breadcrumb.name;
-                })       
+                })*/       
                 this.title.setTitle(this.settings.name + this.pageTitle);
             }
         })   
