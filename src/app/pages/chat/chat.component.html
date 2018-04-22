@@ -35,8 +35,12 @@
                             <img matListAvatar [src]="talk.image">
                             <p *ngIf="talk.hasAttachment" matLine class="message">
                                 <span [ngClass]="(talk.my) ? 'bg-primary' : 'bg-accent'">
-                                    <img src="assets/img/vendor/Word-icon.png">
-                                        {{talk.attachmentName}}
+                                    <a style="color:white;" href="#">
+                                    <figure>
+                                        <img width="75" src="assets/img/vendor/Word-icon.png">
+                                        <figcaption>{{talk.attachmentName}}</figcaption>
+                                    </figure>
+                                    </a>
                                 </span>
                             </p>
                             <p matLine class="message">
