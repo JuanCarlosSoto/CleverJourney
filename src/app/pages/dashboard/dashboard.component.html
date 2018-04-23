@@ -51,12 +51,9 @@
                             <p class="py-1">Open orders with the most aging.</p>
                             <div class="flex-p">
                                 <!-- -->
-                                <mat-table #table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                                <mat-table #table [dataSource]="dsTopOld" matSort class="mat-elevation-z8">
 
                                     <ng-container matColumnDef="edit">
-                                        <mat-header-cell *matHeaderCellDef>
-                                            <i style="cursor: pointer" class="material-icons" (click)="displayAdd()">note_add</i>
-                                        </mat-header-cell>
                                         <mat-cell *matCellDef="let row">
                                             <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
                                         </mat-cell>
@@ -81,7 +78,7 @@
                                     </ng-container>
                                     <ng-container matColumnDef="loc">
                                         <mat-header-cell *matHeaderCellDef> Localization </mat-header-cell>
-                                        <mat-cell *matCellDef="let element"> {{element.loc}} </mat-cell>
+                                        <mat-cell *matCellDef="let element"> <span style="cursor: pointer" (click)="paintCircle(element.loc, element.pocustomerref)">Map</span> </mat-cell>
                                     </ng-container>
                                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
@@ -93,12 +90,9 @@
                             <p class="py-1">Open orders with the the biggest amounts.</p>
                             <div class="flex-p">
                                 <!-- -->
-                                <mat-table #table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                                <mat-table #table [dataSource]="dsTopPrice" matSort class="mat-elevation-z8">
 
                                     <ng-container matColumnDef="edit">
-                                        <mat-header-cell *matHeaderCellDef>
-                                            <i style="cursor: pointer" class="material-icons" (click)="displayAdd()">note_add</i>
-                                        </mat-header-cell>
                                         <mat-cell *matCellDef="let row">
                                             <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
                                         </mat-cell>
@@ -123,7 +117,7 @@
                                     </ng-container>
                                     <ng-container matColumnDef="loc">
                                         <mat-header-cell *matHeaderCellDef> Localization </mat-header-cell>
-                                        <mat-cell *matCellDef="let element"> {{element.loc}} </mat-cell>
+                                        <mat-cell *matCellDef="let element"> <span style="cursor: pointer" (click)="paintCircle(element.loc, element.pocustomerref)">Map</span> </mat-cell>
                                     </ng-container>
                                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
