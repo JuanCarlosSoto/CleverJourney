@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AppSettings } from '../../../app.settings';
 import { Settings } from '../../../app.settings.model';
-import "leaflet-map";
+import "leaflet";
 import "style-loader!leaflet/dist/leaflet.css";
 
 @Component({
