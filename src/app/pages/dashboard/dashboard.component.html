@@ -51,9 +51,10 @@
                             <p class="py-1">Open orders with the most aging.</p>
                             <div class="flex-p">
                                 <!-- -->
-                                <mat-table #table [dataSource]="dsTopOld" matSort class="mat-elevation-z8">
+                                <mat-table #table [dataSource]="dsTopOld" class="mat-elevation-z8">
 
                                     <ng-container matColumnDef="edit">
+                                        <mat-header-cell *matHeaderCellDef></mat-header-cell>
                                         <mat-cell *matCellDef="let row">
                                             <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
                                         </mat-cell>
@@ -61,19 +62,19 @@
 
 
                                     <ng-container matColumnDef="axisref">
-                                        <mat-header-cell *matHeaderCellDef mat-sort-header> Axis Ref </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="pocustomerref">
-                                        <mat-header-cell *matHeaderCellDef mat-sort-header> PO / Customer Ref </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> PO / Customer Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.pocustomerref}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="sovendorref">
-                                        <mat-header-cell *matHeaderCellDef mat-sort-header> SO / Vendor Ref </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> SO / Vendor Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.sovendorref}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="requesteddate">
-                                        <mat-header-cell *matHeaderCellDef mat-sort-header> Requested Date </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> Requested Date </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.requesteddate}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="loc">
@@ -90,9 +91,10 @@
                             <p class="py-1">Open orders with the the biggest amounts.</p>
                             <div class="flex-p">
                                 <!-- -->
-                                <mat-table #table [dataSource]="dsTopPrice" matSort class="mat-elevation-z8">
+                                <mat-table #table [dataSource]="dsTopPrice" class="mat-elevation-z8">
 
                                     <ng-container matColumnDef="edit">
+                                        <mat-header-cell *matHeaderCellDef></mat-header-cell>
                                         <mat-cell *matCellDef="let row">
                                             <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
                                         </mat-cell>
@@ -100,19 +102,19 @@
 
 
                                     <ng-container matColumnDef="axisref">
-                                        <mat-header-cell *matHeaderCellDef mat-sort-header> Axis Ref </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="pocustomerref">
-                                        <mat-header-cell *matHeaderCellDef mat-sort-header> PO / Customer Ref </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> PO / Customer Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.pocustomerref}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="sovendorref">
-                                        <mat-header-cell *matHeaderCellDef mat-sort-header> SO / Vendor Ref </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> SO / Vendor Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.sovendorref}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="requesteddate">
-                                        <mat-header-cell *matHeaderCellDef mat-sort-header> Requested Date </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> Requested Date </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.requesteddate}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="loc">
