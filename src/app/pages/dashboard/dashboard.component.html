@@ -1,41 +1,143 @@
 <app-info-cards></app-info-cards>
 
 <div fxLayout="row wrap">
-    <div fxFlex="100" fxFlex.gt-sm="45" class="flex-p"> 
+    <div fxFlex="100" fxFlex.gt-sm="50" class="flex-p"> 
         <app-disk-space></app-disk-space>
     </div>
-    <div fxFlex="100" fxFlex.gt-sm="55" class="flex-p">
-        <app-todo></app-todo>
+    <div fxFlex="100" fxFlex.gt-sm="50" class="flex-p">
+        <app-analytics></app-analytics>
     </div>
 </div>
 
 <div fxLayout="row wrap">
     <div fxFlex="100" fxFlex.gt-sm="70" class="flex-p"> 
-        <app-analytics></app-analytics>
+        <div id="leaflet-map"></div>    
     </div>
     <div fxFlex="100" fxFlex.gt-sm="30" fxLayout="column">
         <div fxFlex="100" class="flex-p">
+
             <mat-card>
                 <div fxLayout="row" fxLayoutAlign="space-between center" class="muted-text">
-                    <mat-icon class="icon-lg">monetization_on</mat-icon>
+                    <mat-icon class="icon-lg">assignment</mat-icon>
                     <div>
-                        <h1>$ 35700</h1>
-                        <h2 class="fw-400">Profit</h2>
-                    </div>                
-                </div>            
+                        <h1>157</h1>
+                        <h2 class="fw-400">Total Open Orders</h2>
+                    </div>
+                </div>
             </mat-card>
         </div>
         <div fxFlex="100" class="flex-p">
             <mat-card>
                 <div fxLayout="row" fxLayoutAlign="space-between center" class="muted-text">
-                    <mat-icon class="icon-lg">cloud_download</mat-icon>
+                    <mat-icon class="icon-lg">monetization_on</mat-icon>
                     <div>
-                        <h1>187230</h1>
-                        <h2 class="fw-400">Downloads</h2>
-                    </div>                
-                </div>            
+                        <h1>$ 33, 500</h1>
+                        <h2 class="fw-400">Total Amount on Open Orders</h2>
+                    </div>
+                </div>
             </mat-card>
-        </div>       
+        </div>
+
+        <div class="flex-p">
+            <mat-card>
+                <mat-card-header fxLayoutAlign="center center">
+                    <mat-card-subtitle>
+                        <h1>Top Orders </h1>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <mat-tab-group>
+                        <mat-tab label="Oldest">
+                            <p class="py-1">Open orders with the most aging.</p>
+                            <div class="flex-p">
+                                <!-- -->
+                                <mat-table #table [dataSource]="dsTopOld" class="mat-elevation-z8">
+
+                                    <ng-container matColumnDef="edit">
+                                        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                                        <mat-cell *matCellDef="let row">
+                                            <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
+                                        </mat-cell>
+                                    </ng-container>
+                                    <!--
+                                    <ng-container matColumnDef="axisref">
+                                        <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
+                                    </ng-container>
+                                    -->
+                                    <ng-container matColumnDef="pocustomerref">
+                                        <mat-header-cell *matHeaderCellDef> Cust Ref </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.pocustomerref}} </mat-cell>
+                                    </ng-container>
+                                    <!--
+                                    <ng-container matColumnDef="sovendorref">
+                                        <mat-header-cell *matHeaderCellDef> SO / Vendor Ref </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.sovendorref}} </mat-cell>
+                                    </ng-container>
+                                    -->
+                                    <ng-container matColumnDef="requesteddate">
+                                        <mat-header-cell *matHeaderCellDef> RSD </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.requesteddate}} </mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="loc">
+                                        <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> Localization </mat-header-cell>
+                                        <mat-cell *matCellDef="let element" fxLayoutAlign="center"> <span style="cursor: pointer" (click)="paintCircle(element.loc, element.pocustomerref)">Map</span> </mat-cell>
+                                    </ng-container>
+                                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                                </mat-table>
+                                <!-- -->
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="$$">
+                            <p class="py-1">Open orders with the the biggest amounts.</p>
+                            <div class="flex-p">
+                                <!-- -->
+                                <mat-table #table [dataSource]="dsTopPrice" class="mat-elevation-z8">
+
+                                    <ng-container matColumnDef="edit">
+                                        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                                        <mat-cell *matCellDef="let row">
+                                            <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
+                                        </mat-cell>
+                                    </ng-container>
+                                    <!--
+                                    <ng-container matColumnDef="axisref">
+                                        <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
+                                    </ng-container>
+                                    -->
+                                    <ng-container matColumnDef="pocustomerref">
+                                        <mat-header-cell *matHeaderCellDef> Cust Ref </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.pocustomerref}} </mat-cell>
+                                    </ng-container>
+                                    <!--
+                                    <ng-container matColumnDef="sovendorref">
+                                        <mat-header-cell *matHeaderCellDef> SO / Vendor Ref </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.sovendorref}} </mat-cell>
+                                    </ng-container>
+                                    -->
+                                    <ng-container matColumnDef="requesteddate">
+                                        <mat-header-cell *matHeaderCellDef> RSD </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.requesteddate}} </mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="loc">
+                                        <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> Localization </mat-header-cell>
+                                        <mat-cell *matCellDef="let element" fxLayoutAlign="center"> <span style="cursor: pointer" (click)="paintCircle(element.loc, element.pocustomerref)">Map</span> </mat-cell>
+                                    </ng-container>
+                                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                                </mat-table>
+                                <!-- -->
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+
+        <!--
         <div fxFlex="100" class="flex-p">
             <mat-card>
                 <div fxLayout="row" fxLayoutAlign="space-between center" class="muted-text">
@@ -47,5 +149,6 @@
                 </div>            
             </mat-card>
         </div>
+        -->
     </div>
 </div>

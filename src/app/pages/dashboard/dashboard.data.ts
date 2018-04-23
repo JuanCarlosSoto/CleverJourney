@@ -1,290 +1,294 @@
 export const orders = [
-   {
-    name: 'Orders',
-    series: [
-      {
-        name: "1980",
-        value: 21632
-      }
-    ]
-  }
+    {
+        'name': 'Orders',
+        series: [
+            {
+                name: '1980',
+                value: 21632
+            }
+        ]
+    }
 ]
 
 export const products = [
-  {
-    "name": "Product-1",
-    "value": 69400
-  },
-  {
-    "name": "Product-2",
-    "value": 59400
-  },
-  {
-    "name": "Product-3",
-    "value": 82400
-  },
-  {
-    "name": "Product-4",
-    "value": 73400
-  },
-  {
-    "name": "Product-5",
-    "value": 25400
-  },
-  {
-    "name": "Product-6",
-    "value": 23400
-  },
-  {
-    "name": "Product-7",
-    "value": 49300
-  },
-  {
-    "name": "Product-8",
-    "value": 55400
-  },
-  {
-    "name": "Product-9",
-    "value": 37400
-  },
-  {
-    "name": "Product-10",
-    "value": 65220
-  },
-  {
-    "name": "Product-11",
-    "value": 79400
-  },
-  {
-    "name": "Product-12",
-    "value": 58400
-  },
-  {
-    "name": "Product-13",
-    "value": 41400
-  },
-  {
-    "name": "Product-14",
-    "value": 37400
-  },
-  {
-    "name": "Product-15",
-    "value": 33700
-  },
-  {
-    "name": "Product-16",
-    "value": 42700
-  },
-  {
-    "name": "Product-17",
-    "value": 52700
-  },
-  {
-    "name": "Product-18",
-    "value": 62700
-  }
+    {
+        name: 'Orders Moday1',
+        value: 69
+    },
+    {
+        name: 'Orders T2',
+        value: 59
+    },
+    {
+        name: 'Orders W3',
+        value: 82
+    },
+    {
+        name: 'Orders T4',
+        value: 73
+    },
+    {
+        name: 'Orders F5',
+        value: 25
+    },
+    {
+        name: 'Orders M8',
+        value: 23
+    },
+    {
+        name: 'Orders T9',
+        value: 49
+    },
+    {
+        name: 'Orders W10',
+        value: 55
+    },
+    {
+        name: 'Orders T11',
+        value: 37
+    },
+    {
+        name: 'Orders F12',
+        value: 65
+    },
+    {
+        name: 'Orders M15',
+        value: 79
+    },
+    {
+        name: 'Orders T16',
+        value: 58
+    },
+    {
+        name: 'Orders W17',
+        value: 41
+    },
+    {
+        name: 'Orders T18',
+        value: 37
+    },
+    {
+        name: 'Orders F19',
+        value: 33
+    },
+    {
+        name: 'Orders M22',
+        value: 42
+    },
+    {
+        name: 'Orders T23',
+        value: 52
+    },
+    {
+        name: 'Orders W24',
+        value: 62
+    }
 ]
 
 export const customers = [
-   {
-    name: 'Customers',
-    series: [
-      {
-        name: "2000",
-        value: 34502
-      }
-    ]
-  }
+    {
+        name: 'Customers',
+        series: [
+            {
+                name: '2000',
+                value: 34502
+            }
+        ]
+    }
 ]
 
 export const refunds = [
-  {
-    "name": "Item-1",
-    "value": 23701
-  },
-  {
-    "name": "Item-2",
-    "value": 33701
-  },
-  {
-    "name": "Item-3",
-    "value": 63701
-  },
-  {
-    "name": "Item-4",
-    "value": 52701
-  },
-  {
-    "name": "Item-5",
-    "value": 73701
-  },
-  {
-    "name": "Item-6",
-    "value": 43701
-  },
-  {
-    "name": "Item-7",
-    "value": 83701
-  },
-  {
-    "name": "Item-8",
-    "value": 29701
-  },
-  {
-    "name": "Item-9",
-    "value": 69701
-  },
-  {
-    "name": "Item-10",
-    "value": 58701
-  },
-  {
-    "name": "Item-11",
-    "value": 65701
-  },
-  {
-    "name": "Item-12",
-    "value": 47701
-  },
-  {
-    "name": "Item-13",
-    "value": 41701
-  },
-  {
-    "name": "Item-14",
-    "value": 25701
-  },
-  {
-    "name": "Item-15",
-    "value": 35701
-  }
+    {
+        name: 'VIP-1',
+        value: 701
+    },
+    {
+        name: 'VIP-2',
+        value: 570
+    },
+    {
+        name: 'VIP-3',
+        value: 637
+    },
+    {
+        name: 'VIP-4',
+        value: 627
+    },
+    {
+        name: 'VIP-5',
+        value: 737
+    },
+    {
+        name: 'VIP-6',
+        value: 781
+    },
+    {
+        name: 'VIP-7',
+        value: 721
+    },
+    {
+        name: 'VIP-8',
+        value: 701
+    },
+    {
+        name: 'VIP-9',
+        value: 697
+    },
+    {
+        name: 'VIP-10',
+        value: 701
+    },
+    {
+        name: 'Item-11',
+        value: 657
+    },
+    {
+        name: 'Item-12',
+        value: 477
+    },
+    {
+        name: 'Item-13',
+        value: 417
+    },
+    {
+        name: 'Item-14',
+        value: 570
+    },
+    {
+        name: 'Item-15',
+        value: 531
+    }
 ]
 
 export const disk_space = [
-  {
-    "name": "Disk C:",
-    "value": 178
-  },
-  {
-    "name": "Disk D:",
-    "value": 340
-  },
-  {
-    "name": "Disk E:",
-    "value": 280
-  }
+    {
+        name: '1 Day',
+        value: 178
+    },
+    {
+        name: '2 Days',
+        value: 340
+    },
+    {
+        name: '3 Days',
+        value: 280
+    }
 ]
 
 export const analytics = [
-  {
-    name: 'Company 1',
-    series: [
-      {
-        name: '2010',
-        value: 31632
-      },
-      {
-        name: '2011',
-        value: 42589
-      },
-      {
-        name: '2012',
-        value: 52458
-      },
-      {
-        name: '2013',
-        value: 69632
-      },
-      {
-        name: '2014',
-        value: 52305
-      },
-      {
-        name: '2015',
-        value: 72412
-      },
-      {
-        name: '2016',
-        value: 66285
-      },
-      {
-        name: '2017',
-        value: 49855
-      }
-    ]
-  },
-  {
-    name: 'Company 2',
-    series: [
-      {
-        name: '2010',
-        value: 61632
-      },
-      {
-        name: '2011',
-        value: 68589
-      },
-      {
-        name: '2012',
-        value: 55458
-      },
-      {
-        name: '2013',
-        value: 62632
-      },
-      {
-        name: '2014',
-        value: 38305
-      },
-      {
-        name: '2015',
-        value: 41412
-      },
-      {
-        name: '2016',
-        value: 32285
-      },
-      {
-        name: '2017',
-        value: 31855
-      }
-    ]
-  },
-  {
-    name: 'Company 3',
-    series: [
-      {
-        name: '2010',
-        value: 55632
-      },
-      {
-        name: '2011',
-        value: 63589
-      },
-      {
-        name: '2012',
-        value: 70458
-      },
-      {
-        name: '2013',
-        value: 79632
-      },
-      {
-        name: '2014',
-        value: 59305
-      },
-      {
-        name: '2015',
-        value: 56412
-      },
-      {
-        name: '2016',
-        value: 49285
-      },
-      {
-        name: '2017',
-        value: 38855
-      }
-    ]
-  }
+    {
+        name: 'Previous year',
+        series: [
+            {
+                name: 'September 2017',
+                value: 6632
+            },
+            {
+                name: 'October 2017',
+                value: 6589
+            },
+            {
+                name: 'November 2017',
+                value: 2458
+            },
+            {
+                name: 'December 2017',
+                value: 2632
+            },
+            {
+                name: 'January',
+                value: 2305
+            },
+            {
+                name: 'February',
+                value: 2412
+            },
+            {
+                name: 'March',
+                value: 6285
+            },
+            {
+                name: 'April',
+                value: 855
+            },
+            {
+                name: 'May',
+                value: 7855
+            }
+        ]
+    },
+    {
+        name: 'Regular Orders',
+        series: [
+            {
+                name: 'September 2017',
+                value: 1632
+            },
+            {
+                name: 'October 2017',
+                value: 8589
+            },
+            {
+                name: 'November 2017',
+                value: 5458
+            },
+            {
+                name: 'December 2017',
+                value: 2632
+            },
+            {
+                name: 'January',
+                value: 8305
+            },
+            {
+                name: 'February',
+                value: 1412
+            },
+            {
+                name: 'March',
+                value: 7285
+            },
+            {
+                name: 'April',
+                value: 1855
+            }
+        ]
+    },
+    {
+        name: 'VIP',
+        series: [
+            {
+                name: 'September 2017',
+                value: 563
+            },
+            {
+                name: 'October 2017',
+                value: 358
+            },
+            {
+                name: 'November 2017',
+                value: 458
+            },
+            {
+                name: 'December 2017',
+                value: 632
+            },
+            {
+                name: 'January',
+                value: 305
+            },
+            {
+                name: 'February',
+                value: 412
+            },
+            {
+                name: 'March',
+                value: 285
+            },
+            {
+                name: 'April',
+                value: 155
+            }
+        ]
+    }
 ]
