@@ -1,126 +1,117 @@
 <div fxLayout="column">
+
     <div class="flex-p">
         <mat-card>
-            <mat-card-header fxLayoutAlign="center">                
-                <mat-card-subtitle><h2>Simple form field</h2></mat-card-subtitle>
+            <mat-card-header fxLayoutAlign="center">
+                <mat-card-subtitle><h2>Upload orders</h2></mat-card-subtitle>
             </mat-card-header>
+
             <mat-card-content fxLayout="column" fxLayoutAlign="center">
+                <mat-checkbox>Is this order Hot?</mat-checkbox>
+
                 <mat-form-field>
-                    <input matInput placeholder="Input">
+                    <input matInput placeholder="Axis REFerence">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="PO / Customer Ref">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="SO / Vendor Ref">
+                </mat-form-field>
+
+                <mat-card-content fxLayoutAlign="left">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker1" placeholder="Requested Date">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </mat-card-content>
+
+                <mat-card-content fxLayoutAlign="left">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker2" placeholder="Shipping Date">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </mat-form-field>
+                </mat-card-content>
+
+                <mat-card-content fxLayoutAlign="left">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker3" placeholder="ETA">
+                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                        <mat-datepicker #picker3></mat-datepicker>
+                    </mat-form-field>
+                </mat-card-content>
+
+                <mat-card-content fxLayoutAlign="left">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker4" placeholder="Delivery">
+                        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                        <mat-datepicker #picker4></mat-datepicker>
+                    </mat-form-field>
+                </mat-card-content>
+
+                <mat-form-field>
+                    <input matInput placeholder="Shipper">
                 </mat-form-field>
                 <mat-form-field>
-                    <textarea matInput placeholder="Textarea"></textarea>
+                    <input matInput placeholder="Consignee">
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-select placeholder="Select">
-                        <mat-option value="option">Option</mat-option>
-                    </mat-select>
-                </mat-form-field>                               
-            </mat-card-content>
-        </mat-card>
-    </div>
-    <div class="flex-p">
-        <mat-card>
-            <mat-card-header fxLayoutAlign="center">                
-                <mat-card-subtitle><h2>Form field with placeholder</h2></mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content fxLayout="column" fxLayoutAlign="center">
-                <form [formGroup]="options">
-                    <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
+                    <textarea matInput placeholder="Text area">Comments Log</textarea>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Carrier">
+                </mat-form-field>
+
+                <form>
                     <div class="py-1">
-                        <label>Float placeholder: </label>
-                        <mat-radio-group formControlName="floatPlaceholder">
-                            <mat-radio-button value="auto">Auto</mat-radio-button>
-                            <mat-radio-button value="always">Always</mat-radio-button>
-                            <mat-radio-button value="never">Never</mat-radio-button>
+                        <label>Service: &nbsp;&nbsp;&nbsp;</label>
+                        <mat-radio-group>
+                            <mat-radio-button value="LTL">LTL</mat-radio-button>
+                            <mat-radio-button value="CustomerBrokerage">Customer Brokerage</mat-radio-button>
                         </mat-radio-group>
                     </div>
                 </form>
-                <mat-form-field [hideRequiredMarker]="options.value.hideRequired"
-                                [floatPlaceholder]="options.value.floatPlaceholder">
-                    <input matInput placeholder="Simple placeholder" required>
-                </mat-form-field>
-                <mat-form-field [hideRequiredMarker]="options.value.hideRequired"
-                                [floatPlaceholder]="options.value.floatPlaceholder">
-                    <mat-select required>
-                        <mat-option>-- None --</mat-option>
-                        <mat-option value="option">Option</mat-option>
-                    </mat-select>
-                    <mat-placeholder><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> placeholder</i></mat-placeholder>
-                </mat-form-field>               
-            </mat-card-content>
-        </mat-card>
-    </div> 
-    <div class="flex-p">
-        <mat-card>
-            <mat-card-header fxLayoutAlign="center">                
-                <mat-card-subtitle><h2>Form field with hints</h2></mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content fxLayout="column" fxLayoutAlign="center">
-                <mat-form-field hintLabel="Max 10 characters">
-                    <input matInput #input maxlength="10" placeholder="Enter some input">
-                    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+                <div fxFlex="1000" class="flex-p" style="width: 500px">
+                    <mat-form-field>
+                        <mat-select placeholder="Order Status">
+                            <mat-option value="option">Booked</mat-option>
+                            <mat-option value="option">Shipped</mat-option>
+                        </mat-select>
+                        <mat-hint align="end">Please Select ORDER STATUS</mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field>
+                    <input matInput placeholder="H.U.">
                 </mat-form-field>
                 <mat-form-field>
-                    <mat-select placeholder="Select me">
-                      <mat-option value="option">Option</mat-option>
-                    </mat-select>
-                    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
-                </mat-form-field>                            
-            </mat-card-content>
-        </mat-card>
-    </div> 
-    <div class="flex-p">
-        <mat-card>
-            <mat-card-header fxLayoutAlign="center">                
-                <mat-card-subtitle><h2>Form field with error messages</h2></mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content fxLayout="column" fxLayoutAlign="center">
-                <mat-form-field>
-                    <input matInput placeholder="Enter your email" [formControl]="email" required>
-                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-                </mat-form-field>                           
-            </mat-card-content>
-        </mat-card>
-    </div> 
-    <div class="flex-p">
-        <mat-card>
-            <mat-card-header fxLayoutAlign="center">                
-                <mat-card-subtitle><h2>Form field with prefix & suffix</h2></mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content fxLayout="column" fxLayoutAlign="center">
-                <mat-form-field>
-                    <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    <input matInput placeholder="WT">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Amount" type="number" [style.text-align]="'right'">
-                    <span matPrefix>$&nbsp;</span>
-                    <span matSuffix>.00</span>
-                </mat-form-field>                        
+                    <input matInput placeholder="Quote #">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Pickup #">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="PRO #">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Duration">
+                </mat-form-field>
+
+                <div fxFlex="50" class="flex-p">
+                    <mat-card>
+                        <mat-card-content>
+                            <button mat-raised-button color="primary">Submit</button>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
             </mat-card-content>
         </mat-card>
     </div>
-    <div class="flex-p">
-        <mat-card>
-            <mat-card-header fxLayoutAlign="center">                
-                <mat-card-subtitle><h2>Form field theming</h2></mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <form [formGroup]="themingForm" [style.fontSize.px]="getFontSize()" fxLayout="column" fxLayoutAlign="center">
-                    <mat-form-field [color]="themingForm.value.color">
-                        <mat-select placeholder="Color" formControlName="color">
-                            <mat-option value="primary">Primary</mat-option>
-                            <mat-option value="accent">Accent</mat-option>
-                            <mat-option value="warn">Warn</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    <mat-form-field [color]="themingForm.value.color">
-                        <input matInput type="number" placeholder="Font size (px)" formControlName="fontSize" min="10">
-                        <mat-error *ngIf="themingForm.get('fontSize')?.invalid">Min size: 10px</mat-error>
-                    </mat-form-field>
-                </form>     
-            </mat-card-content>
-        </mat-card>
-    </div>  
 </div>
