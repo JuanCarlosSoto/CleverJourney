@@ -11,13 +11,13 @@ export class AnalyticsComponent implements OnInit {
   public showXAxis = true;
   public showYAxis = true;
   public gradient = false;
-  public showLegend = false;
+  public showLegend = true;
   public showXAxisLabel = false;
   public xAxisLabel = 'Year';
   public showYAxisLabel = false;
   public yAxisLabel = 'Profit';
   public colorScheme = {
-    domain: ['#283593', '#039BE5', '#FF5252']
+    domain: ['#CCCCCC', '#0388FF', '#FF5252']
   }; 
   public autoScale = true;
   public roundDomains = true;

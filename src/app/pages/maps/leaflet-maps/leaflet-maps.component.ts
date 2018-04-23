@@ -20,15 +20,22 @@ export class LeafletMapsComponent {
 
       let el = document.getElementById("leaflet-map");
 
-      L.Icon.Default.imagePath = 'assets/img/vendor/leaflet';
-      var map = L.map(el).setView([51.505, -0.09], 13);
+      L.Icon.Default.imagePath = 'assets/img/vendor/leaflet/';
+      var map = L.map(el).setView([37.8, -96], 4);
       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
 
-      L.marker([51.5, -0.09]).addTo(map)
+      var circle = L.circle([32.525829, -86.735747], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 50000
+      }).addTo(map);
+
+      /*L.marker([51.5, -0.09]).addTo(map)
         .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+        .openPopup();*/
           
     });
 
