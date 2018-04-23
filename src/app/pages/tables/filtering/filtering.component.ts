@@ -39,7 +39,7 @@ export class FilteringComponent {
     }
 
     displayEdit() {
-        this.router.navigate(['./form-controls/form-field']);
+        this.router.navigate(['./form-controls/input']);
     }
 
 }
