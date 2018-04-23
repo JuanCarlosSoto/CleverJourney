@@ -59,27 +59,29 @@
                                             <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
                                         </mat-cell>
                                     </ng-container>
-
-
+                                    <!--
                                     <ng-container matColumnDef="axisref">
                                         <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
                                     </ng-container>
+                                    -->
                                     <ng-container matColumnDef="pocustomerref">
-                                        <mat-header-cell *matHeaderCellDef> PO / Customer Ref </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> Cust Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.pocustomerref}} </mat-cell>
                                     </ng-container>
+                                    <!--
                                     <ng-container matColumnDef="sovendorref">
                                         <mat-header-cell *matHeaderCellDef> SO / Vendor Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.sovendorref}} </mat-cell>
                                     </ng-container>
+                                    -->
                                     <ng-container matColumnDef="requesteddate">
-                                        <mat-header-cell *matHeaderCellDef> Requested Date </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> RSD </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.requesteddate}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="loc">
-                                        <mat-header-cell *matHeaderCellDef> Localization </mat-header-cell>
-                                        <mat-cell *matCellDef="let element"> <span style="cursor: pointer" (click)="paintCircle(element.loc, element.pocustomerref)">Map</span> </mat-cell>
+                                        <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> Localization </mat-header-cell>
+                                        <mat-cell *matCellDef="let element" fxLayoutAlign="center"> <span style="cursor: pointer" (click)="paintCircle(element.loc, element.pocustomerref)">Map</span> </mat-cell>
                                     </ng-container>
                                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
@@ -99,27 +101,29 @@
                                             <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
                                         </mat-cell>
                                     </ng-container>
-
-
+                                    <!--
                                     <ng-container matColumnDef="axisref">
                                         <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
                                     </ng-container>
+                                    -->
                                     <ng-container matColumnDef="pocustomerref">
-                                        <mat-header-cell *matHeaderCellDef> PO / Customer Ref </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> Cust Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.pocustomerref}} </mat-cell>
                                     </ng-container>
+                                    <!--
                                     <ng-container matColumnDef="sovendorref">
                                         <mat-header-cell *matHeaderCellDef> SO / Vendor Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.sovendorref}} </mat-cell>
                                     </ng-container>
+                                    -->
                                     <ng-container matColumnDef="requesteddate">
-                                        <mat-header-cell *matHeaderCellDef> Requested Date </mat-header-cell>
+                                        <mat-header-cell *matHeaderCellDef> RSD </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.requesteddate}} </mat-cell>
                                     </ng-container>
                                     <ng-container matColumnDef="loc">
-                                        <mat-header-cell *matHeaderCellDef> Localization </mat-header-cell>
-                                        <mat-cell *matCellDef="let element"> <span style="cursor: pointer" (click)="paintCircle(element.loc, element.pocustomerref)">Map</span> </mat-cell>
+                                        <mat-header-cell *matHeaderCellDef fxLayoutAlign="center"> Localization </mat-header-cell>
+                                        <mat-cell *matCellDef="let element" fxLayoutAlign="center"> <span style="cursor: pointer" (click)="paintCircle(element.loc, element.pocustomerref)">Map</span> </mat-cell>
                                     </ng-container>
                                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
