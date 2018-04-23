@@ -1,12 +1,12 @@
 <div fxLayout="column">
-    <div class="flex-p"> 
-        <div fxLayout="column" class="mat-elevation-z8">           
+    <div class="flex-p">
+        <div fxLayout="column" class="mat-elevation-z8">
             <mat-form-field class="p-1">
                 <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Type to filter all columns">
-            </mat-form-field> 
+            </mat-form-field>
         </div>
 
-        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
             <ng-container matColumnDef="messages">
                 <mat-header-cell *matHeaderCellDef></mat-header-cell>
@@ -16,31 +16,35 @@
             </ng-container>
 
             <ng-container matColumnDef="edit">
-                <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                <mat-cell *matCellDef="let row"> <i style="cursor: pointer" class="material-icons">create</i> </mat-cell>
+                <mat-header-cell *matHeaderCellDef>
+                    <i style="cursor: pointer" class="material-icons" (click)="displayAdd()">note_add</i>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
+                </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="hot">
-                <mat-header-cell *matHeaderCellDef> Hot </mat-header-cell>
-                <mat-cell *matCellDef="let element"> 
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Hot </mat-header-cell>
+                <mat-cell *matCellDef="let element">
                     <i *ngIf="element.hot" class="material-icons">flag</i>
                     <i *ngIf="!element.hot" class="material-icons">check_box_outline_blank</i>
                 </mat-cell>
-            </ng-container>     
+            </ng-container>
             <ng-container matColumnDef="axisref">
-                <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Axis Ref </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
-            </ng-container>        
+            </ng-container>
             <ng-container matColumnDef="pocustomerref">
-                <mat-header-cell *matHeaderCellDef> PO / Customer Ref </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> PO / Customer Ref </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.pocustomerref}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="sovendorref">
-                <mat-header-cell *matHeaderCellDef> SO / Vendor Ref </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> SO / Vendor Ref </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.sovendorref}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="requesteddate">
-                <mat-header-cell *matHeaderCellDef> Requested Date </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Requested Date </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.requesteddate}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="shippingdate">
@@ -56,11 +60,11 @@
                 <mat-cell *matCellDef="let element"> {{element.delivery}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="shipper">
-                <mat-header-cell *matHeaderCellDef> Shipper </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Shipper </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.shipper}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="consignee">
-                <mat-header-cell *matHeaderCellDef> Consignee </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Consignee </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.consignee}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="commentslog">
@@ -68,11 +72,11 @@
                 <mat-cell *matCellDef="let element"> {{element.commentslog}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="carrier">
-                <mat-header-cell *matHeaderCellDef> Carrier </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Carrier </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.carrier}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="service">
-                <mat-header-cell *matHeaderCellDef> Service </mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Service </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.service}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="status">
