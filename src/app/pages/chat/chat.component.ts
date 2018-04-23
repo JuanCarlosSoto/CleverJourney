@@ -89,6 +89,10 @@ export class ChatComponent implements OnInit {
     this.router.navigate(['/tables/filtering']);
   }
 
+  showOrderDetails() {
+    this.router.navigate(['./form-controls/input']);
+  }
+
   addFile() {
     this.file.nativeElement.click();
   }
