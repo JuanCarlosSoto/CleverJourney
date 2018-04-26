@@ -7,7 +7,6 @@
         </div>
 
         <mat-table #table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-
             <ng-container matColumnDef="messages">
                 <mat-header-cell *matHeaderCellDef></mat-header-cell>
                 <mat-cell *matCellDef="let row">
@@ -19,8 +18,8 @@
                 <mat-header-cell *matHeaderCellDef>
                     <i style="cursor: pointer" class="material-icons" (click)="displayAdd()">note_add</i>
                 </mat-header-cell>
-                <mat-cell *matCellDef="let row">
-                    <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
+                <mat-cell *matCellDef="let row; let ri = index;">
+                    <i style="cursor: pointer" class="material-icons" (click)="displayEdit(ri)">create</i>
                 </mat-cell>
             </ng-container>
 

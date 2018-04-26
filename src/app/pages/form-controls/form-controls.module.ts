@@ -20,7 +20,7 @@ export const routes = [
   { path: 'checkbox', component: CheckboxComponent, data: { breadcrumb: 'Checkbox' } },
   { path: 'datepicker', component: DatepickerComponent, data: { breadcrumb: 'Datepicker' } },
   { path: 'form-field', component: FormFieldComponent, data: { breadcrumb: 'Form Field' } },
-  { path: 'input', component: InputComponent, data: { breadcrumb: 'Input' } },
+  { path: 'input/:id', component: InputComponent, data: { breadcrumb: 'Input' } },
   { path: 'radio-button', component: RadioButtonComponent, data: { breadcrumb: 'Radio Button' } },
   { path: 'select', component: SelectComponent, data: { breadcrumb: 'Select' } },
   { path: 'slider', component: SliderComponent, data: { breadcrumb: 'Slider' } },

@@ -4,7 +4,7 @@ import { Settings } from '../../app.settings.model';
 import 'leaflet';
 import 'style-loader!leaflet/dist/leaflet.css';
 import {MatTableDataSource} from '@angular/material';
-import { Element, TablesService } from '../tables/tables.service';
+import { AxisOrder, TablesService } from '../tables/tables.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,8 +25,8 @@ export class DashboardComponent implements OnInit {
 
     constructor(public appSettings: AppSettings, private tablesService: TablesService, private router: Router) {
         this.settings = this.appSettings.settings;
-        this.dsTopOld = new MatTableDataSource<Element>(this.tablesService.getTopOld());
-        this.dsTopPrice = new MatTableDataSource<Element>(this.tablesService.getTopPrice());
+        this.dsTopOld = new MatTableDataSource<AxisOrder>(this.tablesService.getTopOld());
+        this.dsTopPrice = new MatTableDataSource<AxisOrder>(this.tablesService.getTopPrice());
     }
 
     ngOnInit() {

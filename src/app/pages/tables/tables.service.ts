@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-export interface Element {
+export class AxisOrder {
     hot: boolean;
     axisref: string;
     pocustomerref: string;
@@ -24,7 +24,7 @@ export interface Element {
     loc: string;
 }
 
-const data: Element[] = [
+const data: AxisOrder[] = [
     {hot: false, axisref: 'AX001', pocustomerref: 'PO001', sovendorref: 'SO0010', requesteddate: '04/27/18', shippingdate: '05/01/18', eta: '', delivery: '', shipper: 'Saia Burgess/ Johnson Elec.', consignee: 'Baxter - TN',    commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: '',       hu: '5',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '2d', loc: '32.525829, -86.735747'},
     {hot: true,  axisref: 'AX002', pocustomerref: 'PO004', sovendorref: 'SO0987', requesteddate: '04/27/18', shippingdate: '05/01/18', eta: '', delivery: '', shipper: 'Valeo SLP',                   consignee: 'AI',             commentslog: 'Autoparts', carrier: '', service: 'CUSTOMS BROKERAGE', status: 'BOOKED', hu: '50', wt: 'CUSTOMS BROKERAGE', quoteno: '', pickupno: '', prono: '', duration: '2d', loc: '31.711940, -106.435774'},
     {hot: false, axisref: 'AX003', pocustomerref: 'PO045', sovendorref: 'S00063', requesteddate: '04/27/18', shippingdate: '05/01/18', eta: '', delivery: '', shipper: 'Cebi / Huamantla',            consignee: 'Baxter - TN',    commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: 'BOOKED', hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '2d', loc: '30.711940, -100.435774'},
@@ -40,7 +40,7 @@ const data: Element[] = [
     {hot: false, axisref: 'AX013', pocustomerref: 'POX13', sovendorref: 'S00013', requesteddate: '04/27/18', shippingdate: '05/04/18', eta: '', delivery: '', shipper: 'NG Laredo',                   consignee: 'Baxter TN',      commentslog: 'Autoparts', carrier: '', service: 'CUSTOMS BROKERAGE', status: '',       hu: '2',  wt: 'CUSTOMS BROKERAGE', quoteno: '', pickupno: '', prono: '', duration: '', loc: '31.711940, -106.435774'}
 ];
 
-const topPrice: Element[] = [
+const topPrice: AxisOrder[] = [
     {hot: false, axisref: 'AX001', pocustomerref: 'PO001', sovendorref: 'SO0010', requesteddate: '04/27/18', shippingdate: '05/01/18', eta: '', delivery: '', shipper: 'Saia Burgess/ Johnson Elec.', consignee: 'Baxter - TN',    commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: '',       hu: '5',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '2d', loc: '32.525829, -86.735747'},
     {hot: true,  axisref: 'AX002', pocustomerref: 'PO004', sovendorref: 'SO0987', requesteddate: '04/27/18', shippingdate: '05/01/18', eta: '', delivery: '', shipper: 'Valeo SLP',                   consignee: 'AI',             commentslog: 'Autoparts', carrier: '', service: 'CUSTOMS BROKERAGE', status: 'BOOKED', hu: '50', wt: 'CUSTOMS BROKERAGE', quoteno: '', pickupno: '', prono: '', duration: '2d', loc: '31.711940, -106.435774'},
     {hot: false, axisref: 'AX003', pocustomerref: 'PO045', sovendorref: 'S00063', requesteddate: '04/27/18', shippingdate: '05/01/18', eta: '', delivery: '', shipper: 'Cebi / Huamantla',            consignee: 'Baxter - TN',    commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: 'BOOKED', hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '2d', loc: '30.711940, -100.435774'},
@@ -48,7 +48,7 @@ const topPrice: Element[] = [
     {hot: true,  axisref: 'AX005', pocustomerref: 'PO0XX', sovendorref: 'S00005', requesteddate: '04/27/18', shippingdate: '05/02/18', eta: '', delivery: '', shipper: 'Nuevo Laredo',                consignee: 'NG Laredo',      commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: 'BOOKED', hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '3d', loc: '31.711940, -106.435774'},
 ];
 
-const topOld: Element[] = [
+const topOld: AxisOrder[] = [
     {hot: false, axisref: 'AX001', pocustomerref: 'PO001', sovendorref: 'SO0010', requesteddate: '04/27/18', shippingdate: '05/01/18', eta: '', delivery: '', shipper: 'Saia Burgess/ Johnson Elec.', consignee: 'Baxter - TN',    commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: '',       hu: '5',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '2d', loc: '32.525829, -86.735747'},
     {hot: true,  axisref: 'AX002', pocustomerref: 'PO004', sovendorref: 'SO0987', requesteddate: '04/27/18', shippingdate: '05/01/18', eta: '', delivery: '', shipper: 'Valeo SLP',                   consignee: 'AI',             commentslog: 'Autoparts', carrier: '', service: 'CUSTOMS BROKERAGE', status: 'BOOKED', hu: '50', wt: 'CUSTOMS BROKERAGE', quoteno: '', pickupno: '', prono: '', duration: '2d', loc: '31.711940, -106.435774'},
     {hot: false, axisref: 'AX003', pocustomerref: 'PO045', sovendorref: 'S00063', requesteddate: '04/27/18', shippingdate: '05/01/18', eta: '', delivery: '', shipper: 'Cebi / Huamantla',            consignee: 'Baxter - TN',    commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: 'BOOKED', hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '2d', loc: '31.711940, -106.435774'},
@@ -62,7 +62,7 @@ export class TablesService {
 
   constructor() { }
 
-  getData(){
+  getData() {
     return data;
   }
 
@@ -70,7 +70,19 @@ export class TablesService {
     return topPrice;
   }
 
-  getTopOld(){
+  getTopOld() {
     return topOld;
   }
+  addElement(element: AxisOrder) {
+      data.push(element);
+  }
+  findOne(id: number): AxisOrder {
+      if (id > data.length - 1 || id < 0) {
+          return null;
+      } else {
+          return data[id];
+      }
+  }
+
+
 }

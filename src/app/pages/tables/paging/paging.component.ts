@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { AppSettings } from '../../../app.settings';
 import { Settings } from '../../../app.settings.model';
-import { TablesService, Element } from '../tables.service';
+import { TablesService, AxisOrder } from '../tables.service';
 
 @Component({
   selector: 'app-paging',
@@ -15,7 +15,7 @@ export class PagingComponent {
   public settings: Settings;
   constructor(public appSettings:AppSettings, private tablesService:TablesService) {
     this.settings = this.appSettings.settings; 
-    this.dataSource = new MatTableDataSource<Element>(this.tablesService.getData());
+    this.dataSource = new MatTableDataSource<AxisOrder>(this.tablesService.getData());
   }
   
   ngAfterViewInit() {
