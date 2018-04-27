@@ -15,6 +15,7 @@ export class InputComponent implements OnInit {
     form: FormGroup;
     public settings: Settings;
     public order: AxisOrder;
+    private orderid: number;
     constructor(public appSettings: AppSettings,
                 public fb: FormBuilder,
                 private ts: TablesService,
@@ -24,13 +25,15 @@ export class InputComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        let oid: number;
+        // let oid: number;
+        
         this.ar.params.subscribe(p => {
-            oid = p['id'];
+            this.orderid = p['id'];
+            //oid = p['id'];
         });        
-        this.order = this.ts.findOne(oid);
+        this.order = this.ts.findOne(this.orderid);
         this.form = this.fb.group({
-            'hot': [],
+            'hot': [this.order.hot],
             'axisref': [this.order.axisref],
             'pocustref': [this.order.pocustomerref],
             'vendorref': [this.order.sovendorref],
@@ -81,7 +84,9 @@ export class InputComponent implements OnInit {
         myOrder.pickupno = this.form.value.pickupno;
         myOrder.prono = this.form.value.prono;
         myOrder.duration = this.form.value.duration;
-        this.ts.addElement(myOrder);
+        myOrder.id = this.orderid;
+        this.ts.editElement(myOrder);
+        //this.ts.addElement(myOrder);
         this.router.navigate(['/tables/filtering']);
     }
 }

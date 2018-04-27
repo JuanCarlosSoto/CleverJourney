@@ -27,6 +27,7 @@
                         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                         <mat-datepicker #picker1></mat-datepicker>
                     </mat-form-field>
+                    <mat-checkbox formControlName="hot">Is this order Hot?</mat-checkbox>
                 </section>
 
 
@@ -128,8 +129,8 @@
 
                         <mat-form-field>
                             <mat-select formControlName="orderstatus" placeholder="Order Status">
-                                <mat-option value="option">Booked</mat-option>
-                                <mat-option value="option">Shipped</mat-option>
+                                <mat-option value="Booked">Booked</mat-option>
+                                <mat-option value="Shipped">Shipped</mat-option>
                             </mat-select>
                             <mat-hint align="end">Please Select ORDER STATUS</mat-hint>
                         </mat-form-field>

@@ -34,12 +34,13 @@ const data: AxisOrder[] = [
     {id: 4, hot: true,  axisref: 'AX005', pocustomerref: 'PO0XX', sovendorref: 'S00005', requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 2), eta: null, delivery: null, shipper: 'Nuevo Laredo',                consignee: 'NG Laredo',      commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: 'BOOKED', hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '3d', loc: '31.711940, -106.435774'},
     {id: 5, hot: false, axisref: 'AX006', pocustomerref: 'POXXX', sovendorref: 'S00006', requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 2), eta: null, delivery: null, shipper: 'NG Laredo',                   consignee: 'Baxter TN',      commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: 'BOOKED', hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '3d', loc: '32.525829, -86.735747'},
     {id: 6, hot: false, axisref: 'AX007', pocustomerref: 'PO056', sovendorref: 'SO987',  requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 2), eta: null, delivery: null, shipper: 'Cebi / Huamantla',            consignee: 'Airtemp Puebla', commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: 'BOOKED', hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '3d', loc: '30.711940, -100.435774'},
-    {id: 7, hot: false, axisref: 'AX008', pocustomerref: 'PO006', sovendorref: 'S00008', requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 3), eta: null, delivery: null, shipper: 'Cebi / Huamantla',            consignee: 'Nuevo Laredo',   commentslog: 'Autoparts', carrier: '', service: 'CUSTOMS BROKERAGE', status: 'BOOKED', hu: '2',  wt: 'CUSTOMS BROKERAGE', quoteno: '', pickupno: '', prono: '', duration: '3d', loc: '40.711940, -80.435774'},
+    /*{id: 7, hot: false, axisref: 'AX008', pocustomerref: 'PO006', sovendorref: 'S00008', requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 3), eta: null, delivery: null, shipper: 'Cebi / Huamantla',            consignee: 'Nuevo Laredo',   commentslog: 'Autoparts', carrier: '', service: 'CUSTOMS BROKERAGE', status: 'BOOKED', hu: '2',  wt: 'CUSTOMS BROKERAGE', quoteno: '', pickupno: '', prono: '', duration: '3d', loc: '40.711940, -80.435774'},
     {id: 8, hot: false, axisref: 'AX009', pocustomerref: 'PO0X7', sovendorref: 'S00009', requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 3), eta: null, delivery: null, shipper: 'Nuevo Laredo',                consignee: 'NG Laredo',      commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: 'BOOKED', hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '3d', loc: '32.525829, -86.735747'},
     {id: 9, hot: false, axisref: 'AX010', pocustomerref: 'POXX8', sovendorref: 'S00010', requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 3), eta: null, delivery: null, shipper: 'NG Laredo',                   consignee: 'Baxter TN',      commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: '',       hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '', loc: '31.711940, -106.435774'},
     {id: 10, hot: false, axisref: 'AX011', pocustomerref: 'PO009', sovendorref: 'S00011', requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 3), eta: null, delivery: null, shipper: 'Cebi / Huamantla',            consignee: 'Nuevo Laredo',   commentslog: 'Autoparts', carrier: '', service: 'CUSTOMS BROKERAGE', status: '',       hu: '2',  wt: 'CUSTOMS BROKERAGE', quoteno: '', pickupno: '', prono: '', duration: '', loc: '40.711940, -80.435774'},
     {id: 11, hot: true,  axisref: 'AX012', pocustomerref: 'PO012', sovendorref: 'S00012', requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 4), eta: null, delivery: null, shipper: 'Nuevo Laredo',                consignee: 'NG Laredo',      commentslog: 'Autoparts', carrier: '', service: 'LTL',               status: '',       hu: '2',  wt: 'LTL',               quoteno: '', pickupno: '', prono: '', duration: '', loc: '32.525829, -86.735747'},
     {id: 12, hot: false, axisref: 'AX013', pocustomerref: 'POX13', sovendorref: 'S00013', requesteddate: new Date(2018, 3, 27), shippingdate: new Date(2018, 4, 4), eta: null, delivery: null, shipper: 'NG Laredo',                   consignee: 'Baxter TN',      commentslog: 'Autoparts', carrier: '', service: 'CUSTOMS BROKERAGE', status: '',       hu: '2',  wt: 'CUSTOMS BROKERAGE', quoteno: '', pickupno: '', prono: '', duration: '', loc: '31.711940, -106.435774'}
+    */
 ];
 
 const topPrice: AxisOrder[] = [
@@ -90,6 +91,11 @@ export class TablesService {
           return result;
           // return data.find(n => n.id == id);
       // }
+  }
+  editElement(element: AxisOrder){
+      const pos = data.map(ao => ao.id).indexOf(element.id);
+      data.splice(pos, 1);
+      data.push(element);
   }
 
 
