@@ -4,47 +4,20 @@
 .mat-table {
     overflow-x: scroll;
 }
-.mat-column-edit {
-    flex: 0 0 60px;
-}
-.mat-column-messages {
-    flex: 0 0 60px;
-}
-.mat-column-hot {
-    flex: 0 0 60px;
-}
-.mat-column-axisref {
-    flex: 0 0 100px;
-}
-.mat-column-pocustomerref {
-    flex: 0 0 100px;
-}
-.mat-column-sovendorref {
-    flex: 0 0 100px;
-}
 .mat-column-requesteddate {
     flex: 0 0 100px;
 }
-.mat-column-shippingdate {
-    flex: 0 0 100px;
+.mat-form-shippingdate {
+    flex: 0 0 500px;
 }
-.mat-column-eta {
-    flex: 0 0 100px;
+.mat-form-eta {
+    flex: 0 0 300px;
 }
 .mat-column-delivery {
     flex: 0 0 100px;
 }
 .mat-column-shipper {
     flex: 0 0 250px;
-}
-.mat-column-consignee {
-    flex: 0 0 150px;
-}
-.mat-column-commentslog {
-    flex: 0 0 200px;
-}
-.mat-column-carrier {
-    flex: 0 0 100px;
 }
 .mat-column-service {
     flex: 0 0 180px;

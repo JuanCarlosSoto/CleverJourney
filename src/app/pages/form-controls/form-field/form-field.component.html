@@ -1,29 +1,32 @@
-<div fxLayout="column" fxLayout.gt-sm="row wrap">
+<div fxLayout="column" fxLayout.gt-sm="row wrap" fxFlex="100">
 
-    <div class="flex-p" fxFlex="40">
+    <div class="flex-p" fxFlex="100">
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" fxFlex="80" fxFlex.gt-sm="50" fxFlex.sm="60">
+
         <mat-card>
             <mat-card-header fxLayoutAlign="center">
                 <mat-card-subtitle><h1>Upload Order</h1></mat-card-subtitle>
             </mat-card-header>
 
             <mat-card-content fxLayout="column" fxLayoutAlign="center">
-                <mat-checkbox>Is this order Hot?</mat-checkbox>
+                <mat-checkbox formControlName="hot">Is this order Hot?</mat-checkbox>
 
                 <mat-form-field>
-                    <input matInput placeholder="Axis REFerence">
+                    <input matInput formControlName="axisref" placeholder="Axis REFerence">
                 </mat-form-field>
 
                 <mat-form-field>
-                    <input matInput placeholder="PO / Customer Ref">
+                    <input matInput formControlName="pocustref" placeholder="PO / Customer Ref">
                 </mat-form-field>
 
                 <mat-form-field>
-                    <input matInput placeholder="SO / Vendor Ref">
+                    <input matInput formControlName="vendorref" placeholder="SO / Vendor Ref">
                 </mat-form-field>
 
                 <mat-card-content fxLayoutAlign="left">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="picker1" placeholder="Requested Date">
+                        <input matInput formControlName="requesteddate" [matDatepicker]="picker1" placeholder="Requested Date">
                         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                         <mat-datepicker #picker1></mat-datepicker>
                     </mat-form-field>
@@ -31,7 +34,7 @@
 
                 <mat-card-content fxLayoutAlign="left">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="picker2" placeholder="Shipping Date">
+                        <input matInput formControlName="shippingdate" [matDatepicker]="picker2" placeholder="Shipping Date">
                         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                         <mat-datepicker #picker2></mat-datepicker>
                     </mat-form-field>
@@ -39,7 +42,7 @@
 
                 <mat-card-content fxLayoutAlign="left">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="picker3" placeholder="ETA">
+                        <input matInput formControlName="eta" [matDatepicker]="picker3" placeholder="ETA">
                         <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                         <mat-datepicker #picker3></mat-datepicker>
                     </mat-form-field>
@@ -47,71 +50,72 @@
 
                 <mat-card-content fxLayoutAlign="left">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="picker4" placeholder="Delivery">
+                        <input matInput formControlName="delivery" [matDatepicker]="picker4" placeholder="Delivery">
                         <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
                         <mat-datepicker #picker4></mat-datepicker>
                     </mat-form-field>
                 </mat-card-content>
 
                 <mat-form-field>
-                    <input matInput placeholder="Shipper">
+                    <input matInput formControlName="shipper" placeholder="Shipper">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Consignee">
+                    <input matInput formControlName="consignee" placeholder="Consignee">
                 </mat-form-field>
                 <mat-form-field>
-                    <textarea matInput placeholder="Text area">Comments Log</textarea>
+                    <textarea matInput formControlName="commentslog" placeholder="Comments">Comments Log</textarea>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Carrier">
+                    <input matInput formControlName="carrier" placeholder="Carrier">
                 </mat-form-field>
 
-                <form>
+                <!-- <form>  -->
                     <div class="py-1">
                         <label>Service: &nbsp;&nbsp;&nbsp;</label>
-                        <mat-radio-group>
+                        <mat-radio-group formControlName="service">
                             <mat-radio-button value="LTL">LTL</mat-radio-button>
                             <mat-radio-button value="CustomerBrokerage">Customer Brokerage</mat-radio-button>
                         </mat-radio-group>
                     </div>
-                </form>
+                <!-- </form> -->
                 <div fxFlex="1000" class="flex-p" style="width: 500px">
                     <mat-form-field>
-                        <mat-select placeholder="Order Status">
-                            <mat-option value="option">Booked</mat-option>
-                            <mat-option value="option">Shipped</mat-option>
+                        <mat-select placeholder="Order Status" formControlName="orderstatus">
+                            <mat-option value="Booked">Booked</mat-option>
+                            <mat-option value="Shipped">Shipped</mat-option>
                         </mat-select>
                         <mat-hint align="end">Please Select ORDER STATUS</mat-hint>
                     </mat-form-field>
                 </div>
 
                 <mat-form-field>
-                    <input matInput placeholder="H.U.">
+                    <input matInput formControlName="hu" placeholder="H.U.">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="WT">
+                    <input matInput formControlName="wt" placeholder="WT">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Quote #">
+                    <input matInput formControlName="quoteno" placeholder="Quote #">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Pickup #">
+                    <input matInput formControlName="pickupno" placeholder="Pickup #">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="PRO #">
+                    <input matInput formControlName="prono" placeholder="PRO #">
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Duration">
+                    <input matInput formControlName="duration" placeholder="Duration">
                 </mat-form-field>
 
                 <div fxFlex="50" class="flex-p">
                     <mat-card>
                         <mat-card-content>
-                            <button mat-raised-button color="primary">Submit</button>
+                            <button mat-raised-button color="primary" type="submit">Submit</button>
                         </mat-card-content>
                     </mat-card>
                 </div>
             </mat-card-content>
         </mat-card>
+        </form>
     </div>
 </div>

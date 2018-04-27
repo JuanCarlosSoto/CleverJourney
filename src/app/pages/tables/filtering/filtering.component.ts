@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource, MatSort } from '@angular/material';
 import { AppSettings } from '../../../app.settings';
 import { Settings } from '../../../app.settings.model';
-import { TablesService, Element } from '../tables.service';
+import { TablesService, AxisOrder } from '../tables.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class FilteringComponent {
     public settings: Settings;
     constructor(public appSettings: AppSettings, private tablesService: TablesService, private router: Router) {
         this.settings = this.appSettings.settings;
-        this.dataSource = new MatTableDataSource<Element>(this.tablesService.getData());
+        this.dataSource = new MatTableDataSource<AxisOrder>(this.tablesService.getData());
     }
 
     applyFilter(filterValue: string) {
@@ -38,8 +38,8 @@ export class FilteringComponent {
         this.router.navigate(['./form-controls/form-field']);
     }
 
-    displayEdit() {
-        this.router.navigate(['./form-controls/input']);
+    displayEdit(id: number) {
+        this.router.navigate(['./form-controls/input', id]);
     }
 
 }

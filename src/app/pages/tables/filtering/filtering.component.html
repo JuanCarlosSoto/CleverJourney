@@ -7,30 +7,34 @@
         </div>
 
         <mat-table #table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-
             <ng-container matColumnDef="messages">
-                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <!-- <mat-header-cell *matHeaderCellDef></mat-header-cell> -->
+                <mat-header-cell *matHeaderCellDef>
+                        <i style="cursor: pointer" class="material-icons" (click)="displayAdd()">note_add</i>
+                    </mat-header-cell>
                 <mat-cell *matCellDef="let row">
                     <i style="cursor: pointer" class="material-icons" (click)="displayComments()">message</i>
                 </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="edit">
-                <mat-header-cell *matHeaderCellDef>
-                    <i style="cursor: pointer" class="material-icons" (click)="displayAdd()">note_add</i>
-                </mat-header-cell>
-                <mat-cell *matCellDef="let row">
-                    <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Edit </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <i style="cursor: pointer" class="material-icons" (click)="displayEdit(element.id)">create</i>
                 </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="hot">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Hot </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <i *ngIf="element.hot" class="material-icons">flag</i>
-                    <i *ngIf="!element.hot" class="material-icons">check_box_outline_blank</i>
+                    <i *ngIf="element.hot" class="material-icons">assignment_late</i>
+                    <!-- <i *ngIf="element.hot" class="material-icons">warning</i> -->
+                    <!-- <i *ngIf="element.hot" class="material-icons">flag</i>  -->
+                    <!-- <i *ngIf="!element.hot" class="material-icons">check_box_outline_blank</i> -->
                 </mat-cell>
             </ng-container>
+
+            
             <ng-container matColumnDef="axisref">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Axis Ref </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
@@ -45,19 +49,19 @@
             </ng-container>
             <ng-container matColumnDef="requesteddate">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Requested Date </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.requesteddate}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.requesteddate |  date:'MM/dd/yy' }} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="shippingdate">
                 <mat-header-cell *matHeaderCellDef> Shipping Date </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.shippingdate}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.shippingdate | date:'MM/dd/yy'}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="eta">
                 <mat-header-cell *matHeaderCellDef> ETA </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.eta}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.eta | date:'MM/dd/yy'}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="delivery">
                 <mat-header-cell *matHeaderCellDef> Delivery </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.delivery}} </mat-cell>
+                <mat-cell *matCellDef="let element"> {{element.delivery | date:'MM/dd/yy' }} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="shipper">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Shipper </mat-header-cell>

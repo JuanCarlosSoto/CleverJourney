@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class ChatComponent implements OnInit {
   @ViewChild('file') file;
   public settings: Settings;
-  public userImage = 'assets/img/users/user.jpg';
+  public userImage = 'assets/img/users/rickshawJcSv.jpg';
   public chats: Array<Chat>;
   public talks: Array<Chat>;
   public currentChat:Chat;
