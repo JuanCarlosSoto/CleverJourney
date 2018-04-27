@@ -27,7 +27,7 @@ export class InputComponent implements OnInit {
         let oid: number;
         this.ar.params.subscribe(p => {
             oid = p['id'];
-        });
+        });        
         this.order = this.ts.findOne(oid);
         this.form = this.fb.group({
             'hot': [],
@@ -57,14 +57,7 @@ export class InputComponent implements OnInit {
 
         }); */
     }
-    private transformDate(dateToTransform: Date): string {
-        if (dateToTransform) {
-            const m = dateToTransform.getMonth() + 1;
-            return m + '/' + dateToTransform.getDate() + '/' + dateToTransform.getFullYear();
-        } else {
-            return '';
-        }
-    }
+    
     onSubmit() {
         let myOrder: AxisOrder;
         myOrder = new AxisOrder();
@@ -72,10 +65,10 @@ export class InputComponent implements OnInit {
         myOrder.axisref = this.form.value.axisref;
         myOrder.pocustomerref = this.form.value.pocustref;
         myOrder.sovendorref = this.form.value.vendorref;
-        myOrder.requesteddate = this.transformDate(this.form.value.requesteddate);
-        myOrder.shippingdate = this.transformDate(this.form.value.shippingdate);
-        myOrder.eta = this.transformDate(this.form.value.eta);
-        myOrder.delivery = this.transformDate(this.form.value.delivery);
+        myOrder.requesteddate = this.form.value.requesteddate;
+        myOrder.shippingdate = this.form.value.shippingdate;
+        myOrder.eta = this.form.value.eta;
+        myOrder.delivery = this.form.value.delivery;
         myOrder.shipper = this.form.value.shipper;
         myOrder.consignee = this.form.value.consignee;
         myOrder.commentslog = this.form.value.commentslog;

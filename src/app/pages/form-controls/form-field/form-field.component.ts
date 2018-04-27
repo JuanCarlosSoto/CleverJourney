@@ -41,6 +41,7 @@ export class FormFieldComponent {
           'duration': []
       });
   }
+  /*
   private transformDate(dateToTransform: Date): string {
       if (dateToTransform) {
           const m = dateToTransform.getMonth() + 1;
@@ -49,6 +50,7 @@ export class FormFieldComponent {
           return '';
       }
   }
+  */
   onSubmit() {
       let myOrder: AxisOrder;
       myOrder = new AxisOrder();
@@ -56,10 +58,10 @@ export class FormFieldComponent {
       myOrder.axisref = this.form.value.axisref;
       myOrder.pocustomerref = this.form.value.pocustref;
       myOrder.sovendorref = this.form.value.vendorref;
-      myOrder.requesteddate = this.transformDate(this.form.value.requesteddate);
-      myOrder.shippingdate = this.transformDate(this.form.value.shippingdate);
-      myOrder.eta = this.transformDate(this.form.value.eta);
-      myOrder.delivery = this.transformDate(this.form.value.delivery);
+      myOrder.requesteddate = this.form.value.requesteddate;
+      myOrder.shippingdate = this.form.value.shippingdate;
+      myOrder.eta = this.form.value.eta;
+      myOrder.delivery = this.form.value.delivery;
       myOrder.shipper = this.form.value.shipper;
       myOrder.consignee = this.form.value.consignee;
       myOrder.commentslog = this.form.value.commentslog;
