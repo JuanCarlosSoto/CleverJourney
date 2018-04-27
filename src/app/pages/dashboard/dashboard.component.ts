@@ -21,7 +21,8 @@ export class DashboardComponent implements OnInit {
     public circle: any;
     public map: any;
 
-    public displayedColumns = ['edit', 'pocustomerref', 'requesteddate', 'loc'];
+    //public displayedColumns = ['edit', 'pocustomerref', 'requesteddate', 'loc'];
+    public displayedColumns = ['pocustomerref', 'requesteddate', 'loc'];
 
     constructor(public appSettings: AppSettings, private tablesService: TablesService, private router: Router) {
         this.settings = this.appSettings.settings;

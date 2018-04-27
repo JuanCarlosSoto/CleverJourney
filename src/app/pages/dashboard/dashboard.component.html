@@ -53,13 +53,14 @@
                                 <!-- -->
                                 <mat-table #table [dataSource]="dsTopOld" class="mat-elevation-z8">
 
+                                    <!--
                                     <ng-container matColumnDef="edit">
                                         <mat-header-cell *matHeaderCellDef></mat-header-cell>
                                         <mat-cell *matCellDef="let row">
                                             <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
                                         </mat-cell>
                                     </ng-container>
-                                    <!--
+                                    
                                     <ng-container matColumnDef="axisref">
                                         <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
@@ -95,13 +96,14 @@
                                 <!-- -->
                                 <mat-table #table [dataSource]="dsTopPrice" class="mat-elevation-z8">
 
+                                    <!--
                                     <ng-container matColumnDef="edit">
                                         <mat-header-cell *matHeaderCellDef></mat-header-cell>
                                         <mat-cell *matCellDef="let row">
                                             <i style="cursor: pointer" class="material-icons" (click)="displayEdit()">create</i>
                                         </mat-cell>
                                     </ng-container>
-                                    <!--
+                                    
                                     <ng-container matColumnDef="axisref">
                                         <mat-header-cell *matHeaderCellDef> Axis Ref </mat-header-cell>
                                         <mat-cell *matCellDef="let element"> {{element.axisref}} </mat-cell>
