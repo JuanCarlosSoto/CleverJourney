@@ -62,6 +62,7 @@ const topOld: AxisOrder[] = [
 
 @Injectable()
 export class TablesService {
+    private orderid: number;
 
   constructor() { }
 
@@ -81,21 +82,26 @@ export class TablesService {
       data.push(element);
   }
   findOne(id: number): AxisOrder {
-      console.log('finding id:' + id);
+      //console.log('finding id:' + id);
+      this.orderid = id;
       /*if (id > data.length - 1 || id < 0) {
           return null;
       } else {*/
           let result: AxisOrder;
           result = data.find(n => n.id == id);
-          console.log(result);
+          // console.log(result);
           return result;
           // return data.find(n => n.id == id);
       // }
   }
   editElement(element: AxisOrder){
-      const pos = data.map(ao => ao.id).indexOf(element.id);
-      data.splice(pos, 1);
-      data.push(element);
+      // const pos = data.map(ao => ao.id).indexOf(element.id);
+      // console.log('BEFORE Splicing: ' + pos);
+      //console.log('PRIVATE ID: ' + this.orderid);
+      data.splice(this.orderid, 1, element)
+      // console.log('AFTER Splicing: ' + pos);
+      // data.splice(pos, 1);
+      // data.push(element);
   }
 
 
