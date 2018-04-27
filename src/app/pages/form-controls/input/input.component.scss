@@ -1,0 +1,45 @@
+.mat-row, .mat-header-row {
+    width: 150vw;
+}
+.mat-table {
+    overflow-x: scroll;
+}
+.mat-column-requesteddate {
+    flex: 0 0 100px;
+}
+.mat-form-shippingdate {
+    flex: 0 0 500px;
+}
+.mat-form-eta {
+    flex: 0 0 300px;
+}
+.mat-column-delivery {
+    flex: 0 0 100px;
+}
+.mat-column-shipper {
+    flex: 0 0 250px;
+}
+.mat-column-service {
+    flex: 0 0 180px;
+}
+.mat-column-status {
+    flex: 0 0 100px;
+}
+.mat-column-hu {
+    flex: 0 0 100px;
+}
+.mat-column-wt {
+    flex: 0 0 180px;
+}
+.mat-column-quoteno {
+    flex: 0 0 100px;
+}
+.mat-column-pickupno {
+    flex: 0 0 100px;
+}
+.mat-column-prono {
+    flex: 0 0 100px;
+}
+.mat-column-duration {
+    flex: 0 0 100px;
+}

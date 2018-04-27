@@ -98,7 +98,7 @@ export class TablesService {
       // const pos = data.map(ao => ao.id).indexOf(element.id);
       // console.log('BEFORE Splicing: ' + pos);
       //console.log('PRIVATE ID: ' + this.orderid);
-      data.splice(this.orderid, 1, element)
+      data.splice(this.orderid, 1, element);
       // console.log('AFTER Splicing: ' + pos);
       // data.splice(pos, 1);
       // data.push(element);
