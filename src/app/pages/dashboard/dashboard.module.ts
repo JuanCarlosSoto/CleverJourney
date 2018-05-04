@@ -8,7 +8,6 @@ import { SharedModule } from '../../shared/shared.module';
 import { DashboardComponent } from './dashboard.component';
 import { InfoCardsComponent } from './info-cards/info-cards.component';
 import { DiskSpaceComponent } from './disk-space/disk-space.component';
-import { TodoComponent } from './todo/todo.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 
 export const routes = [
@@ -28,7 +27,6 @@ export const routes = [
     DashboardComponent,
     InfoCardsComponent,
     DiskSpaceComponent,
-    TodoComponent,
     AnalyticsComponent
   ]
 })
