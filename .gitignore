@@ -2,6 +2,8 @@
 
 # compiled output
 /dist
+/dist0
+/dist.tar.gz
 /dist-server
 /tmp
 /out-tsc
